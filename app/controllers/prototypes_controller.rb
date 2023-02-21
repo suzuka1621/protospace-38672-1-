@@ -15,7 +15,20 @@ class PrototypesController < ApplicationController
       render :new
     end
   end
+  
+  def edit
+  end
+
+  def update
+    if @prototype.update(prototype_params)
+      redirect_to prototype_path(@prototype)
+    else
+      render :edit
+    end
+  end
 end
+
+
 
 private
 
